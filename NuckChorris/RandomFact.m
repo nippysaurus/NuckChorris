@@ -13,6 +13,7 @@
 @synthesize factId;
 
 @synthesize factLabel;
+@synthesize decorativeLayer;
 
 @synthesize favoriteButton = _favoriteButton;
 @synthesize shareButton = _shareButton;
@@ -55,6 +56,7 @@
 {
     self.factLabel = nil;
     
+    [decorativeLayer release];
     [super dealloc];
 }
 
@@ -200,7 +202,8 @@
     }
     
     void (^animations)(void) = ^{
-        self.factLabel.backgroundColor = color;
+        //self.factLabel.backgroundColor = color;
+        self.decorativeLayer.backgroundColor = color;
     };
     
     void (^completion)(BOOL) = ^(BOOL completed){

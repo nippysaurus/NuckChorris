@@ -13,6 +13,7 @@
 @interface RandomFact : UIView <UIGestureRecognizerDelegate>
 {
     BOOL controlsShowing;
+    UIView *decorativeLayer;
 }
 
 @property (nonatomic) NSInteger factId;
@@ -20,6 +21,7 @@
 
 @property (nonatomic, retain) IBOutlet UILabel *factLabel;
 
+@property (nonatomic, retain) IBOutlet UIView *decorativeLayer;
 @property (nonatomic, retain) IBOutlet UIButton *favoriteButton;
 @property (nonatomic, retain) IBOutlet UIButton *shareButton;
 
