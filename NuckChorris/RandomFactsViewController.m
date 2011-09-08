@@ -108,7 +108,7 @@
     
     // ==================
     
-	CGSize constraint = CGSizeMake(280.0f - (0 + 0), 20000.0f);
+	CGSize constraint = CGSizeMake(280.0f - (8 + 8), 20000.0f);
 	
 	CGSize size = [self.randomFactViewFromNib.factText sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:15.0f]
                                                   constrainedToSize:constraint
@@ -125,9 +125,12 @@
     //NSLog(@"self.view.frame.height = %f", self.view.frame.size.height);
     
     CGRect oldRect = self.randomFactViewFromNib.frame;
-    CGRect newRect = CGRectMake(oldRect.origin.x, y, oldRect.size.width, height);
+    //CGRect newRect = CGRectMake(oldRect.origin.x, y, oldRect.size.width, height + 8);
+    CGRect newRect = CGRectMake(oldRect.origin.x, y, 280.0, height + 16);
     
     self.randomFactViewFromNib.frame = newRect;
+    
+    [self.randomFactViewFromNib.factLabel setFrame:CGRectMake(8, 8, 280 - (8 + 8), height)];
 }
 
 - (void)showNextRandomFact

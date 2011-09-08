@@ -100,7 +100,7 @@
         NSLog(@"hideControls");    
         controlsShowing = NO;
         
-        CGRect offset = CGRectMake(0, self.factLabel.frame.origin.y, self.factLabel.frame.size.width, self.factLabel.frame.size.height);
+        CGRect offset = CGRectMake(8, self.factLabel.frame.origin.y, self.factLabel.frame.size.width, self.factLabel.frame.size.height);
         
         void (^animations)(void) = ^{
             self.factLabel.frame = offset;
