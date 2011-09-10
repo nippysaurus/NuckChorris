@@ -32,9 +32,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NuckChorrisAppDelegate *app = (NuckChorrisAppDelegate*)[UIApplication sharedApplication].delegate;
+    FavoriteManager *favoriteManager = [FavoriteManager sharedInstance];
     
-    NSInteger rows = (NSInteger)[[app favoritesFromData] count];
+    NSInteger rows = (NSInteger)[[favoriteManager favoritesFromData] count];
  
     // show or hide the table view to reveal (or hide) the hidden message
     self.hiddenMessage.hidden = (rows != 0);
@@ -44,7 +44,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NuckChorrisAppDelegate *app = (NuckChorrisAppDelegate*)[UIApplication sharedApplication].delegate;
+    FavoriteManager *favoriteManager = [FavoriteManager sharedInstance];
+    FactManager *factManager = [FactManager sharedInstance];
     
     TableCell* cell = (TableCell*)[tableView dequeueReusableCellWithIdentifier:@"FavoritesTableCell"];
     
@@ -61,11 +62,11 @@
     
     // lookup the fact id from the favourites collection
     NSInteger index = indexPath.row;
-    NSArray *favourite_fact_ids = [app favoritesFromData];
+    NSArray *favourite_fact_ids = [favoriteManager favoritesFromData];
     NSNumber *favourite_fact_id = [favourite_fact_ids objectAtIndex:index];
     NSInteger favourite_fact_id_int = [favourite_fact_id intValue];
     
-    NSString *factText = [app factFromDataWithId:favourite_fact_id_int];
+    NSString *factText = [factManager factFromDataWithId:favourite_fact_id_int];
     
     [cell setFactId:favourite_fact_id_int factString:factText];
     
@@ -74,15 +75,16 @@
 
 - (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NuckChorrisAppDelegate *app = (NuckChorrisAppDelegate*)[UIApplication sharedApplication].delegate;
+    FavoriteManager *favoriteManager = [FavoriteManager sharedInstance];
+    FactManager *factManager = [FactManager sharedInstance];
 
     // lookup the fact id from the favourites collection
     NSInteger index = indexPath.row;
-    NSArray *favourite_fact_ids = [app favoritesFromData];
+    NSArray *favourite_fact_ids = [favoriteManager favoritesFromData];
     NSNumber *favourite_fact_id = [favourite_fact_ids objectAtIndex:index];
     NSInteger favourite_fact_id_int = [favourite_fact_id intValue];
     
-    NSString *fact = [app factFromDataWithId:favourite_fact_id_int];
+    NSString *fact = [factManager factFromDataWithId:favourite_fact_id_int];
     
 	return [TableCell cellHeightForFact:fact];
 }

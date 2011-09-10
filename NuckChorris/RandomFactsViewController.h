@@ -9,23 +9,14 @@
 #import <UIKit/UIKit.h>
 
 #import "NuckChorrisAppDelegate.h"
-//#import "RandomFactLabel.h"
 #import "RandomFact.h"
+#import "FactManager.h"
 
 @interface RandomFactsViewController : UIViewController
 {
-    //NSInteger currentFactId;
-    //RandomFact *nextToPopulateWithFact;
-    
-    //BOOL alreadyDisplayedOnce;
+    //
 }
 
 @property (nonatomic, retain) IBOutlet RandomFact *randomFactViewFromNib;
-
-//@property (nonatomic, retain) IBOutlet RandomFactLabel *fact1;
-//@property (nonatomic, retain) IBOutlet RandomFactLabel *fact2;
-//@property (nonatomic, retain) IBOutlet RandomFactLabel *fact3;
-//@property (nonatomic, retain) IBOutlet RandomFactLabel *fact4;
-//@property (nonatomic, retain) IBOutlet UIView *tapableRegionView;
 
 @end

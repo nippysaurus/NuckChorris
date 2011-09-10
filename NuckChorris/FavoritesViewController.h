@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NuckChorrisAppDelegate.h"
 #import "TableCell.h"
+#import "FactManager.h"
 
 @interface FavoritesViewController : UIViewController /*UITableViewController*/ <UITableViewDataSource>
 {

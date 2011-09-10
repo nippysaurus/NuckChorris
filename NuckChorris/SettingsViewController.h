@@ -11,11 +11,11 @@
 #import "SHK.h"
 #import "SHKTwitter.h"
 #import "SHKFacebook.h"
+#import "FactManager.h"
 
-@interface SettingsViewController : UIViewController {
-    
-//    UIButton *facebookLogoutButton;
-//    UIButton *twitterLogoutButton;
+@interface SettingsViewController : UIViewController
+{
+    //
 }
 
 @property (nonatomic, retain) IBOutlet UIButton *deauthorizeButton;

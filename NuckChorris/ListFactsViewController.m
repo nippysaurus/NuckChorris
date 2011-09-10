@@ -31,17 +31,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NuckChorrisAppDelegate *app = (NuckChorrisAppDelegate*)[UIApplication sharedApplication].delegate;
+    FactManager *factManager = [FactManager sharedInstance];
     
-    NSInteger rows = (NSInteger)[app.factsFromData count];
+    NSInteger rows = (NSInteger)[factManager.factsFromData count];
     
     return rows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NuckChorrisAppDelegate *app = (NuckChorrisAppDelegate*)[UIApplication sharedApplication].delegate;
-    
+{    
     TableCell* cell = (TableCell*)[tableView dequeueReusableCellWithIdentifier:@"ListTableCell"];
     
     if (cell == nil)
@@ -55,8 +53,10 @@
 		cell = (TableCell*)self.nibLoadedCell;
     }
     
+    FactManager *factManager = [FactManager sharedInstance];
+    
     NSInteger factId = indexPath.row;
-    NSString *factText = [app factFromDataWithId:factId];
+    NSString *factText = [factManager factFromDataWithId:factId];
     
     [cell setFactId:factId factString:factText];
     
@@ -65,9 +65,9 @@
 
 - (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NuckChorrisAppDelegate *app = (NuckChorrisAppDelegate*)[UIApplication sharedApplication].delegate;
+    FactManager *factManager = [FactManager sharedInstance];
     
-    NSString *fact = [app factFromDataWithId:indexPath.row];
+    NSString *fact = [factManager factFromDataWithId:indexPath.row];
     
 	return [TableCell cellHeightForFact:fact];
 }

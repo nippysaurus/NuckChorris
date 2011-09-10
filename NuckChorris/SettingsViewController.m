@@ -36,51 +36,17 @@
     [super dealloc];
 }
 
-//- (void)didReceiveMemoryWarning
-//{
-//    // Releases the view if it doesn't have a superview.
-//    [super didReceiveMemoryWarning];
-//    
-//    // Release any cached data, images, etc that aren't in use.
-//}
-
 #pragma mark - View lifecycle
-
-//- (void)viewDidLoad
-//{
-//    [super viewDidLoad];
-//}
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    NuckChorrisAppDelegate *app = (NuckChorrisAppDelegate*)[UIApplication sharedApplication].delegate;
+    FactManager *factManager = [FactManager sharedInstance];
     
-    //NSString *newName = [textField text];
-    
-//    [app setNameFromData:newName];
-    
-    self.nameTextField.text = app.nameFromData;
+    self.nameTextField.text = factManager.substituteName;
 
     CGRect inset = CGRectMake(self.nameTextField.bounds.origin.x + 10, self.nameTextField.bounds.origin.y, self.nameTextField.bounds.size.width - 10, self.nameTextField.bounds.size.height);
     self.nameTextField.bounds = inset;
-    
-    //self.facebookLogoutButton.enabled = [SHKFacebook isServiceAuthorized];
-    
-    //NSNumber* version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
 }
-
-//- (void)viewDidUnload
-//{
-//    [super viewDidUnload];
-//    // Release any retained subviews of the main view.
-//    // e.g. self.myOutlet = nil;
-//}
-//
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-//{
-//    // Return YES for supported orientations
-//    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-//}
 
 - (void)viewDidUnload
 {
@@ -102,16 +68,7 @@
     
     [alert show];
     [alert release];
-    
-//    [SHKFacebook logout];
-//    self.deauthorizeButton.enabled = [SHKFacebook isServiceAuthorized];
 }
-
-//- (IBAction)twitterLogout:(id)sender
-//{
-//    [SHKTwitter logout];
-//    self.twitterLogoutButton.enabled = [SHKTwitter isServiceAuthorized];
-//}
 
 #pragma mark - Interaction
 
@@ -121,7 +78,9 @@
     
     NSString *newName = self.nameTextField.text;
     
-    [app setNameFromData:newName];
+    FactManager *factManager = [FactManager sharedInstance];
+    
+    [factManager setSubstituteName:newName];
 
     app.randomViewNeedsUpdate = YES;
     app.listViewNeedsUpdate = YES;
@@ -158,9 +117,4 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-// - (void)viewDidUnload
-//{
-//     [self setNameTextField:nil];
-//     [super viewDidUnload];
-// }
 @end

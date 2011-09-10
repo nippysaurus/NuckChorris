@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FavoriteManager.h"
 
 #import "NuckChorrisAppDelegate.h"
 

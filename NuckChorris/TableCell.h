@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NuckChorrisAppDelegate.h"
 #import "SHK.h"
+#import "FavoriteManager.h"
 
 #define LABEL_TAG 5
 

@@ -177,9 +177,9 @@
 
 - (void)applyFavoriteFormattingWithAnimation:(BOOL)animate
 {
-    NuckChorrisAppDelegate *app = (NuckChorrisAppDelegate*)[UIApplication sharedApplication].delegate;
+    FavoriteManager *favoriteManager = [FavoriteManager sharedInstance];
     
-    BOOL favorite = [app factIdIsFavorite:self->factId];
+    BOOL favorite = [favoriteManager factIdIsFavorite:self->factId];
     
     UIImage *favoriteButtonBackgroundImage = nil;
     UIColor *color = nil;
@@ -235,7 +235,9 @@
     //app.favoritesChanged = [NSDate date];
     //NSDate *favoritesChanged = [app favoritesChanged];
     
-    [app toggleFavoriteForFactId:self->factId];
+    FavoriteManager *favoriteManager = [FavoriteManager sharedInstance];
+    
+    [favoriteManager toggleFavoriteForFactId:self->factId];
     
     [self applyFavoriteFormattingWithAnimation:YES];
     

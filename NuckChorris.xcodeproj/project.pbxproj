@@ -98,10 +98,13 @@
 		4C7AB09614110E1900CEF9D9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7AB09314110E1900CEF9D9 /* Icon@2x.png */; };
 		4C7AB09714110E1900CEF9D9 /* iTunes.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7AB09414110E1900CEF9D9 /* iTunes.png */; };
 		4C91EE7113B870BC00292117 /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C91EE7013B870BC00292117 /* TableCell.m */; };
-		4C91EE7413B8712400292117 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C91EE7313B8712400292117 /* Data.plist */; };
+		4C91EE7413B8712400292117 /* Facts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C91EE7313B8712400292117 /* Facts.plist */; };
 		4C91EE7613B872D400292117 /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C91EE7513B872D400292117 /* TableCell.xib */; };
 		4C91EE8A13BC90F400292117 /* TheFacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C91EE8813BC90F300292117 /* TheFacts.png */; };
 		4C91EE8B13BC90F400292117 /* TheFacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C91EE8913BC90F300292117 /* TheFacts@2x.png */; };
+		4C99C189141B1F9300DB1D0D /* Fact.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C99C188141B1F9300DB1D0D /* Fact.m */; };
+		4C99C18D141B212C00DB1D0D /* FactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C99C18C141B212C00DB1D0D /* FactManager.m */; };
+		4C99C190141B214F00DB1D0D /* FavoriteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C99C18F141B214F00DB1D0D /* FavoriteManager.m */; };
 		4CBCD30713B75CFF0065AEF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBCD30613B75CFF0065AEF9 /* UIKit.framework */; };
 		4CBCD30913B75CFF0065AEF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBCD30813B75CFF0065AEF9 /* Foundation.framework */; };
 		4CBCD30B13B75CFF0065AEF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBCD30A13B75CFF0065AEF9 /* CoreGraphics.framework */; };
@@ -296,10 +299,16 @@
 		4C7AB09414110E1900CEF9D9 /* iTunes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunes.png; sourceTree = "<group>"; };
 		4C91EE6F13B870BC00292117 /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
 		4C91EE7013B870BC00292117 /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
-		4C91EE7313B8712400292117 /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
+		4C91EE7313B8712400292117 /* Facts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Facts.plist; sourceTree = "<group>"; };
 		4C91EE7513B872D400292117 /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
 		4C91EE8813BC90F300292117 /* TheFacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TheFacts.png; sourceTree = "<group>"; };
 		4C91EE8913BC90F300292117 /* TheFacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TheFacts@2x.png"; sourceTree = "<group>"; };
+		4C99C187141B1F9300DB1D0D /* Fact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fact.h; sourceTree = "<group>"; };
+		4C99C188141B1F9300DB1D0D /* Fact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fact.m; sourceTree = "<group>"; };
+		4C99C18B141B212C00DB1D0D /* FactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FactManager.h; sourceTree = "<group>"; };
+		4C99C18C141B212C00DB1D0D /* FactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FactManager.m; sourceTree = "<group>"; };
+		4C99C18E141B214F00DB1D0D /* FavoriteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteManager.h; sourceTree = "<group>"; };
+		4C99C18F141B214F00DB1D0D /* FavoriteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteManager.m; sourceTree = "<group>"; };
 		4CBCD30213B75CFF0065AEF9 /* NuckChorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NuckChorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CBCD30613B75CFF0065AEF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4CBCD30813B75CFF0065AEF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -823,6 +832,12 @@
 				4C6E606013CD8AA300EAFA5D /* SettingsViewController.h */,
 				4C6E606113CD8AA300EAFA5D /* SettingsViewController.m */,
 				4C6E606213CD8AA300EAFA5D /* SettingsViewController.xib */,
+				4C99C187141B1F9300DB1D0D /* Fact.h */,
+				4C99C188141B1F9300DB1D0D /* Fact.m */,
+				4C99C18B141B212C00DB1D0D /* FactManager.h */,
+				4C99C18C141B212C00DB1D0D /* FactManager.m */,
+				4C99C18E141B214F00DB1D0D /* FavoriteManager.h */,
+				4C99C18F141B214F00DB1D0D /* FavoriteManager.m */,
 			);
 			path = NuckChorris;
 			sourceTree = "<group>";
@@ -833,7 +848,7 @@
 				4CBCD30E13B75CFF0065AEF9 /* NuckChorris-Info.plist */,
 				4CBCD30F13B75CFF0065AEF9 /* InfoPlist.strings */,
 				4CBCD31213B75CFF0065AEF9 /* NuckChorris-Prefix.pch */,
-				4C91EE7313B8712400292117 /* Data.plist */,
+				4C91EE7313B8712400292117 /* Facts.plist */,
 				4CBCD31313B75CFF0065AEF9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -931,7 +946,7 @@
 				4CBCD31A13B75CFF0065AEF9 /* MainWindow.xib in Resources */,
 				4CBCD32A13B75DF00065AEF9 /* RandomFactsViewController.xib in Resources */,
 				4CBCD33413B75E710065AEF9 /* ListFactsViewController.xib in Resources */,
-				4C91EE7413B8712400292117 /* Data.plist in Resources */,
+				4C91EE7413B8712400292117 /* Facts.plist in Resources */,
 				4C91EE7613B872D400292117 /* TableCell.xib in Resources */,
 				4C91EE8A13BC90F400292117 /* TheFacts.png in Resources */,
 				4C91EE8B13BC90F400292117 /* TheFacts@2x.png in Resources */,
@@ -1074,6 +1089,9 @@
 				4CC20A1813D6E83100E21D52 /* FavoritesViewController.m in Sources */,
 				4CDFAE4F13DC1C9F0002795A /* ALTabBarView.m in Sources */,
 				4CDFAE5313DC1DA90002795A /* ALTabBarController.m in Sources */,
+				4C99C189141B1F9300DB1D0D /* Fact.m in Sources */,
+				4C99C18D141B212C00DB1D0D /* FactManager.m in Sources */,
+				4C99C190141B214F00DB1D0D /* FavoriteManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

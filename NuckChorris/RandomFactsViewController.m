@@ -101,10 +101,10 @@
 
 - (void)showRandomFactId:(NSInteger)thisId
 {
-    NuckChorrisAppDelegate *app = (NuckChorrisAppDelegate*)[UIApplication sharedApplication].delegate;
+    FactManager *factManager = [FactManager sharedInstance];
     
     self.randomFactViewFromNib.factId = thisId;
-    self.randomFactViewFromNib.factText = [app factFromDataWithId:thisId];
+    self.randomFactViewFromNib.factText = [factManager factFromDataWithId:thisId];
     
     // ==================
     
@@ -135,11 +135,10 @@
 
 - (void)showNextRandomFact
 {
-    NuckChorrisAppDelegate *app = (NuckChorrisAppDelegate*)[UIApplication sharedApplication].delegate;
+    FactManager *factManager = [FactManager sharedInstance];
     
     // get random fact id
-    
-    int count = [app.factsFromData count];
+    int count = [factManager.factsFromData count];
     
     if (count == 0)
         return;
