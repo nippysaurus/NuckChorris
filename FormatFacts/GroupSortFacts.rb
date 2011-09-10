@@ -4,10 +4,12 @@ values = CSV.read("FactsMasterList.csv")
 
 $facts = { 1 => [], 2 => [], 3 => [], 4 => [], 5 => [] }
 
-values.each { |bla|
+values.each do |bla|
     if (bla[0].to_i == 0) then next end
-    $facts[bla[0].to_i].push(bla[1])
-    }
+    #$facts[bla[0].to_i].push(bla[1])
+    data = { :number => bla[1], :hidden => bla[2], :string => bla[3] }
+    $facts[bla[0].to_i].push(data)
+end
 
 # ratio of this level to the one above it
 $ratio = { 1 => 0.0, 2 => 0.0, 3 => 0.0, 4 => 0.0, 5 => 1.0 }
@@ -51,8 +53,28 @@ def DoLevel(level)
    # print facts
    (1..printnum).each do |num|
       fact = $facts[level].pop
-      #output << ["##{$ZID} #{fact}"]
-      puts "##{$ZID} #{fact}"
+      
+      number = fact[:number]
+      string = fact[:string]
+      
+      # puts "#{number} ##{$ZID} #{string}" if (fact[:hidden] != "1")
+      
+      puts "      <dict>
+        <key>number</key>
+        <string>#{number}</string>
+        <key>string</key>
+        <string>#{string}</string>
+      </dict>"
+      
+        # <dict>
+        #   <key>id</key>
+        #   <string></string>
+        #   <key>hidden</key>
+        #   <string></string>
+        #   <key>fact</key>
+        #   <string></string>
+        # </dict>
+      
       
       $ZID += 1
    end
@@ -77,6 +99,7 @@ $level_enabled = { 1 => true, 2 => true, 3 => true, 4 => true, 5 => true }
        $level_enabled[4] = DoLevel(4) if $level_enabled[4]
        $level_enabled[3] = DoLevel(3) if $level_enabled[3]
        $level_enabled[2] = DoLevel(2) if $level_enabled[2]
+       $level_enabled[1] = DoLevel(1) if $level_enabled[1]
 
     end
 

@@ -10,7 +10,8 @@
 
 @implementation FactManager
 
-@synthesize data = _data;
+@synthesize fact_strings = _fact_strings;
+@synthesize fact_numbers = _fact_numbers;
 
 #pragma mark - MEMORY MANAGEMENT
 
@@ -20,7 +21,24 @@
     if (self)
     {
         NSString *factsPlistPath = [[NSBundle mainBundle] pathForResource:@"Facts" ofType:@"plist"];
-        self.data = [[NSMutableDictionary alloc] initWithContentsOfFile:factsPlistPath];
+
+        NSDictionary * plist = [[NSMutableDictionary alloc] initWithContentsOfFile:factsPlistPath];
+        NSArray *facts = [plist objectForKey:@"Facts"];
+        
+        NSMutableArray *numbers = [[NSMutableArray alloc] init];
+        NSMutableArray *strings = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *nsd in facts)
+        {
+            NSString *number = [nsd objectForKey:@"number"];
+            NSString *string = [nsd objectForKey:@"string"];
+            
+            [numbers addObject:number];
+            [strings addObject:string];
+        }
+        
+        self.fact_numbers = numbers;
+        self.fact_strings = strings;
     }
     return self;
 }
@@ -43,7 +61,8 @@
 
 - (void)dealloc
 {
-    self.data = nil;
+    self.fact_strings = nil;
+    self.fact_numbers = nil;
 
     [super dealloc];
 }
@@ -52,14 +71,15 @@
 
 - (NSArray*)factsFromData
 {
-    return (NSArray*)[self.data objectForKey:@"Facts"];
+    //return (NSArray*)[self.data objectForKey:@"Facts"];
+    return [NSArray arrayWithArray:self.fact_strings];
 }
 
 - (NSString*)factFromDataWithId:(NSInteger)id
 {
-    NSArray *factsArray = [self factsFromData];
+    //NSArray *factsArray = [self factsFromData];
     
-    NSString *factText = [factsArray objectAtIndex:id];
+    NSString *factText = [self.fact_strings objectAtIndex:id];
     
     NSString *name = [self substituteName];
     

@@ -13,7 +13,8 @@ BEGIN {
 
 {
 
-printf "\t\t<string>%s</string>\n", $0
+#printf "\t\t<string>%s</string>\n", $0
+printf "%s\n", $0
 
 }
 

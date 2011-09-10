@@ -897,7 +897,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CBCD32313B75CFF0065AEF9 /* Build configuration list for PBXNativeTarget "NuckChorris" */;
 			buildPhases = (
-				4C9CA098141A56C6008499EB /* ShellScript */,
+				4C9CA098141A56C6008499EB /* Run Script - Compile Fact List */,
 				4CBCD2FE13B75CFF0065AEF9 /* Sources */,
 				4CBCD2FF13B75CFF0065AEF9 /* Frameworks */,
 				4CBCD30013B75CFF0065AEF9 /* Resources */,
@@ -999,18 +999,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4C9CA098141A56C6008499EB /* ShellScript */ = {
+		4C9CA098141A56C6008499EB /* Run Script - Compile Fact List */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script - Compile Fact List";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "touch bla";
+			shellScript = "cd FormatFacts\n./ProcessFacts.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 

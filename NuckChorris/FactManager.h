@@ -10,10 +10,12 @@
 
 @interface FactManager : NSObject
 {
-    NSMutableDictionary * _data;
+    NSArray * _fact_strings;
+    NSArray * _fact_numbers;
 }
 
-@property (nonatomic, retain) NSMutableDictionary * data;
+@property (nonatomic, retain) NSArray * fact_strings;
+@property (nonatomic, retain) NSArray * fact_numbers;
 
 + (FactManager*)sharedInstance;
 
