@@ -8,6 +8,9 @@ values.each do |bla|
     if (bla[0].to_i == 0) then next end
     #$facts[bla[0].to_i].push(bla[1])
     data = { :number => bla[1], :hidden => bla[2], :string => bla[3] }
+    
+    if (data[:hidden] == "1") then next end
+    
     $facts[bla[0].to_i].push(data)
 end
 
@@ -63,7 +66,7 @@ def DoLevel(level)
         <key>number</key>
         <string>#{number}</string>
         <key>string</key>
-        <string>#{string}</string>
+        <string>##{$ZID} #{string}</string>
       </dict>"
       
         # <dict>
@@ -99,7 +102,7 @@ $level_enabled = { 1 => true, 2 => true, 3 => true, 4 => true, 5 => true }
        $level_enabled[4] = DoLevel(4) if $level_enabled[4]
        $level_enabled[3] = DoLevel(3) if $level_enabled[3]
        $level_enabled[2] = DoLevel(2) if $level_enabled[2]
-       $level_enabled[1] = DoLevel(1) if $level_enabled[1]
+       #$level_enabled[1] = DoLevel(1) if $level_enabled[1]
 
     end
 
